@@ -1,0 +1,2 @@
+# vaexcursionbot
+Экскурсия для ВА
