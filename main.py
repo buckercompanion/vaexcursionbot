@@ -8,10 +8,10 @@ bot = telebot.TeleBot(TOKEN)
 
 # Словарь для связи названия кнопки с её номером
 LOCATIONS = {
-    'Красивые места': 1,
-    'Офигенные места': 2,
-    'Прекрасные места': 3,
-    'Клевые места': 4
+    'Производство': 1,
+    'Добыча': 2,
+    'Люди и бизнес': 3,
+    'События': 4
 }
 
 def main_keyboard():
@@ -38,8 +38,8 @@ def handle_location(message):
         button_number = LOCATIONS[message.text]
         media_group = []
         
-        # Цикл от 1 до 5 для поиска существующих фото
-        for i in range(1, 6):
+        # Цикл от 1 до 10 для поиска существующих фото
+        for i in range(1, 11):
             file_path = f'images/photo_{button_number}_{i}.jpg'
             
             # Проверяем, существует ли файл, чтобы бот не «упал» с ошибкой
@@ -61,3 +61,4 @@ def handle_location(message):
 # Запуск
 if __name__ == '__main__':
     bot.polling(none_stop=True)
+
